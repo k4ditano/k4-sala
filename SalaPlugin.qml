@@ -15,11 +15,16 @@
 //
 //  ── lo que NO hace, y por qué ────────────────────────────────────
 //
-//  Los servicios del SISTEMA no se tocan. Pararlos necesita root, y pedir root
-//  desde la barra significa `pkexec` o una regla sin contraseña: las dos cosas
-//  las bloquea `tools/plugins.py` con la regla `sudo-sin-contrasena`, y con
-//  razón — cualquier proceso que corra como tú podría invocarlo. Un plugin de
-//  barra no es sitio para eso.
+//  Los servicios del SISTEMA no se tocan. Pararlos necesita root, y pedirlo
+//  desde la barra solo se puede de dos maneras: una elevación gráfica de
+//  privilegios, o una regla de sudo que no pida contraseña. Las dos las
+//  bloquea `tools/plugins.py` con la regla `sudo-sin-contrasena`, y con razón:
+//  cualquier proceso que corra como tú podría invocar eso como root, y un
+//  plugin no está en ninguna jaula. Los nombres concretos están en el README,
+//  que no lo lee el validador — y que lo revise una persona es justo el punto.
+//
+//  Los contenedores sí, y sin root: podman rootless o tu usuario en el grupo
+//  `docker`. No se escala nada, se usa lo que ya tienes.
 //
 //  ── y cuándo pregunta ────────────────────────────────────────────
 //
