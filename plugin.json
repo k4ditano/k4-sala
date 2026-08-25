@@ -1,0 +1,12 @@
+{
+  "id": "sala",
+  "entry": "SalaPlugin.qml",
+  "version": "1.0.0",
+  "title": "Sala de máquinas",
+  "description": "What is running here — containers and user services — with the buttons to stop, pause and restart them",
+  "host": ">=1.1.0",
+  "permisos": ["procesos"],
+  "superficies": ["island", "ipc", "atajo"],
+  "aplicacion": true,
+  "icono": "0xF01A6"
+}
